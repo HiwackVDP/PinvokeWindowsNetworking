@@ -4,31 +4,29 @@
 	{
 		public const int NoError = 0;
 
-		public const int AccessDenied = 5;
-		public const int AlreadyAssigned = 85;
-		public const int BadDevice = 1200;
-		public const int BadNetName = 67;
-		public const int BadProvider = 1204;
-		public const int Cancelled = 1223;
-		public const int ExtendedError = 1208;
-		public const int InvalidAddress = 487;
-		public const int InvalidParameter = 87;
-		public const int InvalidPassword = 1216;
-		public const int MoreData = 234;
-		public const int NoMoreItems = 259;
-		public const int NoNetOrBadPath = 1203;
-		public const int NoNetwork = 1222;
+		private const int AccessDenied = 5;
+		private const int AlreadyAssigned = 85;
+		private const int BadDevice = 1200;
+		private const int BadNetName = 67;
+		private const int BadProvider = 1204;
+		private const int Cancelled = 1223;
+		private const int ExtendedError = 1208;
+		private const int InvalidAddress = 487;
+		private const int InvalidParameter = 87;
+		private const int InvalidPassword = 1216;
+		private const int MoreData = 234;
+		private const int NoMoreItems = 259;
+		private const int NoNetOrBadPath = 1203;
+		private const int NoNetwork = 1222;
+		 
+		private const int BadProfile = 1206;
+		private const int CannotOpenProfile = 1205;
+		private const int DeviceInUse = 2404;
+		private const int NotConnected = 2250;
+		private const int OpenFiles = 2401;
+		private const int MultipleUserConnections = 1219;
 
-		public const int BadProfile = 1206;
-		public const int CannotOpenProfile = 1205;
-		public const int DeviceInUse = 2404;
-		public const int NotConnected = 2250;
-		public const int OpenFiles = 2401;
-		public const int MultipleUserConnections = 1219;
-
-		// Created with excel formula:
-		// ="new ErrorClass("&A1&", """&PROPER(SUBSTITUTE(MID(A1,7,LEN(A1)-6), "_", " "))&"""), "
-		public static ErrorClass[] ErrorList = new ErrorClass[] {
+		private static readonly ErrorClass[] ErrorList = new ErrorClass[] {
 			new ErrorClass(AccessDenied, "Error: Access Denied"),
 			new ErrorClass(AlreadyAssigned, "Error: Already Assigned"),
 			new ErrorClass(BadDevice, "Error: Bad Device"),

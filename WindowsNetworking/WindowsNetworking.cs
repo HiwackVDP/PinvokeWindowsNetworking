@@ -7,25 +7,6 @@ namespace WindowsNetworking
 {
 	public static class PinvokeWindowsNetworking
 	{
-		[DllImport("Mpr.dll", CharSet = CharSet.Unicode)]
-		private static extern int WNetUseConnection(
-			IntPtr hwndOwner,
-			NetResource lpNetResource,
-			string lpPassword,
-			string lpUserID,
-			int dwFlags,
-			string lpAccessName,
-			string lpBufferSize,
-			string lpResult
-		);
-
-		[DllImport("Mpr.dll", CharSet = CharSet.Unicode)]
-		private static extern int WNetCancelConnection2(
-			string name,
-			int flags,
-			bool force
-		);
-
 		public static string ConnectToRemote(string remoteUNC, string username, string password, bool promptUser)
 		{
 			var nr = new NetResource
@@ -54,5 +35,24 @@ namespace WindowsNetworking
 			if (ret == Errors.NoError) return null;
 			return Errors.GetErrorForNumber(ret);
 		}
+
+		[DllImport("Mpr.dll", CharSet = CharSet.Unicode)]
+		private static extern int WNetUseConnection(
+			IntPtr hwndOwner,
+			NetResource lpNetResource,
+			string lpPassword,
+			string lpUserID,
+			int dwFlags,
+			string lpAccessName,
+			string lpBufferSize,
+			string lpResult
+		);
+
+		[DllImport("Mpr.dll", CharSet = CharSet.Unicode)]
+		private static extern int WNetCancelConnection2(
+			string name,
+			int flags,
+			bool force
+		);
 	}
 }
