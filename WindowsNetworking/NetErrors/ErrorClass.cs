@@ -1,4 +1,4 @@
-﻿namespace WindowsNetworking
+﻿namespace WindowsNetworking.NetErrors
 {
 	public struct ErrorClass
 	{

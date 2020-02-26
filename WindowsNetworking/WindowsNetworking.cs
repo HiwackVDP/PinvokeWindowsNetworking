@@ -1,6 +1,7 @@
-using WindowsNetworking.NetResources;
 using System;
 using System.Runtime.InteropServices;
+using WindowsNetworking.NetErrors;
+using WindowsNetworking.NetResources;
 
 namespace WindowsNetworking
 {
