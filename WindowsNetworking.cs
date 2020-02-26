@@ -1,5 +1,4 @@
 using WindowsNetworking.NetResources;
-using Serilog;
 using System;
 using System.Runtime.InteropServices;
 
@@ -7,7 +6,7 @@ namespace WindowsNetworking
 {
 	public static class PinvokeWindowsNetworking
 	{
-		[DllImport("Mpr.dll")]
+		[DllImport("Mpr.dll", CharSet = CharSet.Unicode)]
 		private static extern int WNetUseConnection(
 			IntPtr hwndOwner,
 			NetResource lpNetResource,
@@ -19,7 +18,7 @@ namespace WindowsNetworking
 			string lpResult
 		);
 
-		[DllImport("Mpr.dll")]
+		[DllImport("Mpr.dll", CharSet = CharSet.Unicode)]
 		private static extern int WNetCancelConnection2(
 			string name,
 			int flags,
@@ -38,7 +37,6 @@ namespace WindowsNetworking
 			if (promptUser)
 			{
 				ret = WNetUseConnection(IntPtr.Zero, nr, "", "", ConnectionTypes.Interactive | ConnectionTypes.Prompt, null, null, null);
-				Log.Information($"Authentication prompt returned the result {ret}");
 			}
 			else
 				ret = WNetUseConnection(IntPtr.Zero, nr, password, username, 0, null, null, null);
