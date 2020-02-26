@@ -40,8 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionTypes.cs" />
-    <Compile Include="ErrorClass.cs" />
-    <Compile Include="Errors.cs" />
+    <Compile Include="NetErrors\ErrorClass.cs" />
+    <Compile Include="NetErrors\Errors.cs" />
     <Compile Include="NetResources\DisplayTypes.cs" />
     <Compile Include="NetResources\NetResource.cs" />
     <Compile Include="NetResources\Scopes.cs" />
