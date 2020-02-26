@@ -1,4 +1,4 @@
-bin/**/*
-obj/**/*
 .vs/**/*
-WindowsNetworking.csproj.user
+WindowsNetworking/bin/**/*
+WindowsNetworking/obj/**/*
+WindowsNetworking/WindowsNetworking.csproj.user
